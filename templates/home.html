@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<form action="{{ url_for('main') }}" method="POST">
+    <input type="text" name="search_title" />
+    <input type="submit" value="Search" />
+</form>
+{% if search_title %}
+    <hr />
+    <h3> Results for: {{ search_title }} </h3>
+    {% if games %}
+    	{% for game in games %}
+	<div>
+	  <img src="{{ game.thumbnail }}" />
+	  <a href="/game/{{ game.id }}">{{ game.title }}</a>
+	</div>
+	{% endfor %}
+    {% else %}
+        No results found
+    {% endif %}
+{% endif %}
+{% endblock %}

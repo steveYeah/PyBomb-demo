@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ game.name }}{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<h2>{{ game.name }}</h2>
+<div>
+<img src='{{ game.image }}' />
+</div>
+
+<div>
+{{ game.description }}
+</div>
+{% endblock %}

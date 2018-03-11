@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">
+        <h1>GameSearch</h1>
+        <hr />
+        {% block content %}{% endblock %}
+    </div>
+    <div id="footer">
+        {% block footer %}
+	<br />
+	<hr />
+        &copy; <a href="http://owndsource.net/">steveYeah</a>.
+        {% endblock %}
+    </div>
+</body>
+</html>
