@@ -42,12 +42,22 @@ def game(game_id):
         game.results['original_release_date'], '%Y-%m-%d %H:%M:%S'
     ).strftime('%d/%m/%Y')
 
+    if game.results.get('developers'):
+        developer = game.results.get('developers')[0]['name']
+    else:
+        developer = 'Unknown'
+
+    if game.results.get('publishers'):
+        publisher = game.results.get('publishers')[0]['name']
+    else:
+        publisher = 'Unknown'
+
     game_result = {
         'id': game.results['id'],
         'name': game.results['name'],
         'release_date': release_date,
-        'developer': game.results['developers'][0]['name'],
-        'publisher': game.results['publishers'][0]['name'],
+        'developer': developer,
+        'publisher': publisher,
         'deck': game.results['deck'],
         'image': game.results['image']['small_url'],
     }
@@ -63,9 +73,14 @@ def game_details(game_id):
     game_client = GameClient(app.config['PYBOMB_KEY'])
     game = game_client.fetch(game_id)
 
+    if game.results['description']:
+        description = game.results['description']
+    else:
+        description = "Sorry, we couldn't find any more details"
+
     game_details = {
         'id': game.results['id'],
-        'details': game.results['description'],
+        'details': description,
         'name': game.results['name'],
     }
 
