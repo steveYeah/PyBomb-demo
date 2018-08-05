@@ -10,6 +10,19 @@
 </div>
 
 <div>
-{{ game.description }}
+<b>Released</b>: {{ game.release_date }} <br />
+<b>Developed by</b>: {{ game.developer }} <br />
+<b>Publisher</b>: {{ game.publisher }} <br />
+</div>
+
+<br />
+
+<div>
+{{ game.deck }} <br />
+<a href="{{ url_for('game_details', game_id=game.id) }}">read more</a>
+</div>
+
+<div>
+{{ game.description | safe}}
 </div>
 {% endblock %}
