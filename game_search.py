@@ -38,9 +38,12 @@ def game(game_id):
     game_client = GameClient(app.config['PYBOMB_KEY'])
     game = game_client.fetch(game_id)
 
-    release_date = datetime.strptime(
-        game.results['original_release_date'], '%Y-%m-%d %H:%M:%S'
-    ).strftime('%d/%m/%Y')
+    if game.results['original_release_date']:
+        release_date = datetime.strptime(
+            game.results['original_release_date'], '%Y-%m-%d %H:%M:%S'
+        ).strftime('%d/%m/%Y')
+    else:
+        release_date = 'Unreleased'
 
     if game.results.get('developers'):
         developer = game.results.get('developers')[0]['name']
