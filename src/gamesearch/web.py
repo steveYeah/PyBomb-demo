@@ -10,7 +10,7 @@ app.config["PYBOMB_KEY"] = os.environ.get("PYBOMB_KEY")
 
 
 @app.route("/", methods=("GET", "POST"))
-def main():
+def main() -> str:
     if request.method == "GET":
         return render_template("home.html")
 
@@ -31,7 +31,7 @@ def main():
 
 
 @app.route("/game/<int:game_id>", methods=("GET",))
-def game(game_id):
+def game(game_id: int) -> str:
     game_client = GameClient(app.config["PYBOMB_KEY"])
     game = game_client.fetch(game_id)
 
@@ -66,7 +66,7 @@ def game(game_id):
 
 
 @app.route("/game/<int:game_id>/details", methods=("GET",))
-def game_details(game_id):
+def game_details(game_id: int) -> str:
     game_client = GameClient(app.config["PYBOMB_KEY"])
     game = game_client.fetch(game_id)
 
