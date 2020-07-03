@@ -1,1 +1,1 @@
-web: gunicorn --chdir src/gamesearch web:app
+web: gunicorn --chdir src/demo web:app
