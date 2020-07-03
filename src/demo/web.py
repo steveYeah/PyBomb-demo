@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 from flask import Flask, render_template, request
-from pybomb import GamesClient, GameClient
+from pybomb import GameClient, GamesClient
 
 
 app = Flask(__name__)
