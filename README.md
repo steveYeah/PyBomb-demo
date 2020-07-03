@@ -3,4 +3,4 @@
 
 This is a very simple, bare bones, Flask project to demonstrate how to use [PyBomb](https://github.com/steveYeah/PyBomb) in your projects.
 
-This can been seen running [here](http://search.owndsource.net/), so go try it out!
+This can been seen running [here](https://pybomb-demo.herokuapp.com/), so go try it out!
