@@ -37,7 +37,7 @@ def game(game_id):
 
     if game.results["original_release_date"]:
         release_date = datetime.strptime(
-            game.results["original_release_date"], "%Y-%m-%d %H:%M:%S"
+            game.results["original_release_date"], "%Y-%m-%d"
         ).strftime("%d/%m/%Y")
     else:
         release_date = "Unreleased"

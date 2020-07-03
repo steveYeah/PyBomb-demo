@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     {% block head %}
     <title>{% block title %}{% endblock %}</title>
     {% endblock %}
-</head>
-<body>
+  </head>
+  <body>
     <div id="content">
-        <h1><a href="{{ url_for('main') }}">GameSearch</a></h1>
-        <hr />
-        <form action="{{ url_for('main') }}" method="POST">
-            <input type="text" name="search_title" value="{{ search_title }}" />
-            <input type="submit" value="Search" />
-        </form>
-        <hr />
+      <h1><a href="{{ url_for('main') }}">PyBomb Demo</a></h1>
+      <h2>A simple demo of the
+        <a href="https://github.com/steveYeah/PyBomb" target="_blank">PyBomb clients</a>
+      </h2>
+      <hr />
+      <form action="{{ url_for('main') }}" method="POST">
+        <input type="text" id="search_title" name="search_title" value="{{ search_title }}" />
+        <input type="submit" value="Search Game" />
+      </form>
+      <hr />
 
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </div>
     <div id="footer">
-        {% block footer %}
-	<br />
-	<hr />
-        &copy; <a href="http://owndsource.net/">steveYeah</a>.
-        {% endblock %}
+      {% block footer %}
+      <br />
+      <hr />
+      &copy; <a href="http://owndsource.net/">steveYeah</a>.
+      {% endblock %}
     </div>
-</body>
+  </body>
 </html>
