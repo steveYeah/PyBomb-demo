@@ -240,17 +240,14 @@ version = "0.8.0"
 
 [[package]]
 category = "main"
-description = "Clients for the Giant Bomb API"
+description = "Simple clients for the Giant Bomb API."
 name = "pybomb"
 optional = false
-python-versions = "*"
-version = "0.2.0"
+python-versions = ">=3.6,<4.0"
+version = "0.2.1"
 
 [package.dependencies]
-requests = "*"
-
-[package.extras]
-dev = ["pytest", "pycodestyle", "flake8", "sphinx", "sphinx-autobuild"]
+requests = ">=2.19.0,<3.0.0"
 
 [[package]]
 category = "dev"
@@ -475,8 +472,8 @@ pathspec = [
     {file = "pathspec-0.8.0.tar.gz", hash = "sha256:da45173eb3a6f2a5a487efba21f050af2b41948be6ab52b6a1e3ff22bb8b7061"},
 ]
 pybomb = [
-    {file = "pybomb-0.2.0-py3-none-any.whl", hash = "sha256:2e7da0b3729961365e997777b54de54a60514a313556aafa5d81bfe6325bc4cc"},
-    {file = "pybomb-0.2.0.tar.gz", hash = "sha256:5b2f7f8221b89843967f536a5632004119bb10df49c795609dbd5b953a62f2e1"},
+    {file = "pybomb-0.2.1-py3-none-any.whl", hash = "sha256:a65351fc7b60e4615f83b4a2d168beb114b115be95d815dc8f9808e093d9b38a"},
+    {file = "pybomb-0.2.1.tar.gz", hash = "sha256:6ae9375cba0165ec426ecdb1a9063ab09804c70787c66fbeef12767527872404"},
 ]
 pycodestyle = [
     {file = "pycodestyle-2.6.0-py2.py3-none-any.whl", hash = "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367"},
